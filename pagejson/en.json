@@ -1,0 +1,42 @@
+{
+  "header": {
+    "brand": {
+      "title": "MCP Servers",
+      "url": "/",
+      "avatar": {
+        "src": "/logo.png"
+      }
+    },
+    "nav": {
+      "items": []
+    }
+  },
+  "hero": {
+    "title": "MCP Servers store",
+    "description": "Find awesome MCP Servers over the world."
+  },
+  "footer": {
+    "brand": {
+      "title": "MCP Servers",
+      "description": "Third-Party MCP Servers Store, Search MCP Servers quickly.",
+      "domain": "https://mcp.so"
+    },
+    "copyright": {
+      "owner": "mcp.so",
+      "text": "All rights reserved",
+      "url": "https://mcp.so",
+      "target": "_blank"
+    },
+    "nav": {
+      "items": []
+    },
+    "social": {
+      "items": {
+        "email": {
+          "title": "support@mcp.so",
+          "url": "mailto:support@mcp.so"
+        }
+      }
+    }
+  }
+}

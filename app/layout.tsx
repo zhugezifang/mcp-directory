@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { ThemeProvider } from "@/providers/theme";
 import localFont from "next/font/local";
 
 const geistSans = localFont({
@@ -12,12 +12,6 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-export const metadata: Metadata = {
-  title: "MCP Servers",
-  description:
-    "Third-party MCP Servers store. Collect awesome MCP Servers, Seach MCP Servers by chatting.",
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -25,10 +19,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no"
+        />
+        <link rel="icon" href="/favicon.ico" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );

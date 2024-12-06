@@ -1,4 +1,9 @@
 {
+  "metadata": {
+    "title": "MCP Servers",
+    "description": "Third-party MCP Servers store. Collect awesome MCP Servers, Seach MCP Servers quickly.",
+    "keywords": "MCP Servers, Awesome MCP Servers, MCP Servers Store, MCP Servers Search"
+  },
   "header": {
     "brand": {
       "title": "MCP Servers",
@@ -8,7 +13,23 @@
       }
     },
     "nav": {
-      "items": []
+      "items": [
+        {
+          "title": "Submit",
+          "url": "https://github.com/mcpservers/awesome-mcp-servers/issues/1",
+          "target": "_blank"
+        },
+        {
+          "title": "Telegram",
+          "url": "https://t.me/+N0gv4O9SXio2YWU1",
+          "target": "_blank"
+        },
+        {
+          "title": "Discord",
+          "url": "https://discord.gg/RsYPRrnyqg",
+          "target": "_blank"
+        }
+      ]
     }
   },
   "hero": {

@@ -13,7 +13,7 @@ export default ({ project }: { project: Project }) => {
             <LazyLoadImage
               src={project.avatar_url}
               placeholderSrc={`/logo.png`}
-              alt=""
+              alt={project.title}
               className="mr-4 inline-block h-16 w-16 object-cover rounded-full"
             />
           )}
@@ -30,7 +30,7 @@ export default ({ project }: { project: Project }) => {
               <img
                 key={idx}
                 src={StarIcon.src}
-                alt=""
+                alt="star"
                 className="mr-1.5 inline-block w-4 flex-none"
               />
             ))}

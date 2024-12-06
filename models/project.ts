@@ -65,6 +65,15 @@ export async function getProjects(
   return data;
 }
 
+export async function getProjectsCount(): Promise<number> {
+  const supabase = getSupabaseClient();
+  const { data, error } = await supabase.from("projects").select("count");
+
+  if (error) return 0;
+
+  return data?.[0]?.count || 0;
+}
+
 export async function getFeaturedProjects(
   page: number,
   limit: number

@@ -43,8 +43,6 @@ export default ({ query }: Props) => {
       setInputDisabled(true);
     } catch (e) {
       console.log("search failed: ", e);
-    } finally {
-      setInputDisabled(false);
     }
   };
 

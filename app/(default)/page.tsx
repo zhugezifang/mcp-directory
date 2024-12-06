@@ -1,4 +1,8 @@
-import { getFeaturedProjects, getProjectsWithKeyword } from "@/models/project";
+import {
+  getFeaturedProjects,
+  getProjectsCount,
+  getProjectsWithKeyword,
+} from "@/models/project";
 
 import LandingPage from "@/templates/tailspark/landing/page";
 import { Project } from "@/types/project";
@@ -20,5 +24,13 @@ export default async function Page({
     projects = await getFeaturedProjects(1, 100);
   }
 
-  return <LandingPage page={pagejson} projects={projects} />;
+  const projectsCount = await getProjectsCount();
+
+  return (
+    <LandingPage
+      page={pagejson}
+      projects={projects}
+      projectsCount={projectsCount}
+    />
+  );
 }

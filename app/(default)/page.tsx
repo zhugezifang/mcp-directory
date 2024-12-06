@@ -1,11 +1,24 @@
+import { getFeaturedProjects, getProjectsWithKeyword } from "@/models/project";
+
 import LandingPage from "@/templates/tailspark/landing/page";
-import { getFeaturedProjects } from "@/models/project";
+import { Project } from "@/types/project";
 import pagejson from "@/pagejson/en.json";
 
 export const runtime = "edge";
 
-export default async function () {
-  const featuredProjects = await getFeaturedProjects(1, 100);
+export default async function Page({
+  searchParams,
+}: {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}) {
+  const { q } = await searchParams;
+  let projects: Project[] = [];
 
-  return <LandingPage page={pagejson} projects={featuredProjects} />;
+  if (q) {
+    projects = await getProjectsWithKeyword(q as string, 1, 100);
+  } else {
+    projects = await getFeaturedProjects(1, 100);
+  }
+
+  return <LandingPage page={pagejson} projects={projects} />;
 }

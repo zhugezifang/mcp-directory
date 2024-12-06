@@ -84,3 +84,26 @@ export async function getFeaturedProjects(
 
   return data;
 }
+
+export async function getProjectsWithKeyword(
+  keyword: string,
+  page: number,
+  limit: number
+): Promise<Project[]> {
+  const supabase = getSupabaseClient();
+
+  const { data, error } = await supabase
+    .from("projects")
+    .select("*")
+    .or(
+      `name.ilike.%${keyword}%,title.ilike.%${keyword}%,description.ilike.%${keyword}%`
+    )
+    .eq("status", ProjectStatus.Created)
+    .order("sort", { ascending: false })
+    .order("created_at", { ascending: false })
+    .range((page - 1) * limit, page * limit);
+
+  if (error) return [];
+
+  return data;
+}

@@ -30,5 +30,7 @@ CREATE TABLE projects (
     is_featured BOOLEAN DEFAULT FALSE,
     sort INTEGER DEFAULT 0,
     url VARCHAR(255),
-    target VARCHAR(50)
+    target VARCHAR(50),
+    content TEXT,
+    summary TEXT
 );

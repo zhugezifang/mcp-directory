@@ -15,4 +15,6 @@ export interface Project {
   sort?: number;
   url?: string;
   target?: "_blank" | "_self";
+  content?: string;
+  summary?: string;
 }

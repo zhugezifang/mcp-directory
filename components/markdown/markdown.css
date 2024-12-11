@@ -43,7 +43,7 @@
 
 .markdown pre {
   margin-bottom: 16px;
-  padding: 16px;
+  /* padding: 16px; */
   overflow: auto;
   font-size: 85%;
   line-height: 1.45;
@@ -54,12 +54,14 @@
 .markdown code {
   font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
   font-size: 85%;
+  border-radius: 6px;
 }
 
 .markdown ul,
 .markdown ol {
   padding-left: 2em;
   margin-bottom: 16px;
+  list-style-type: square;
 }
 
 .markdown img {

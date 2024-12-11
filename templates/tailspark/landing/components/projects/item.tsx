@@ -2,11 +2,19 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import Link from "next/link";
 import { Project } from "@/types/project";
 import StarIcon from "../../assets/imgs/star.svg";
+import Stars from "../stars";
 import moment from "moment";
 
 export default ({ project }: { project: Project }) => {
   return (
-    <Link href={project.url || ""} target={project.target || "_self"}>
+    <Link
+      href={
+        project.target === "_blank"
+          ? project.url || ""
+          : `/server/${project.name}`
+      }
+      target={project.target || "_self"}
+    >
       <div className="mb-6 gap-6 overflow-hidden rounded-2xl border border-solid border-[#7e7e7e] bg-white p-8">
         <div className="mb-4 flex flex-row">
           {project.avatar_url && (
@@ -25,15 +33,7 @@ export default ({ project }: { project: Project }) => {
         <p className="mb-4 text-sm text-[#636262]">{project.description}</p>
 
         <div className="flex items-center">
-          {true &&
-            Array.from({ length: 5 }).map((_, idx: number) => (
-              <img
-                key={idx}
-                src={StarIcon.src}
-                alt="star"
-                className="mr-1.5 inline-block w-4 flex-none"
-              />
-            ))}
+          {true && <Stars />}
           <div className="flex-1"></div>
 
           <p className="text-slate-500 text-sm">

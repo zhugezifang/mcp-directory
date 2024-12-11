@@ -4,13 +4,13 @@ import {
   getProjectsWithKeyword,
 } from "@/models/project";
 
-import LandingPage from "@/templates/tailspark/landing/page";
+import LandingPage from "@/templates/tailspark/landing/pages/index";
 import { Project } from "@/types/project";
 import pagejson from "@/pagejson/en.json";
 
 export const runtime = "edge";
 
-export default async function Page({
+export default async function ({
   searchParams,
 }: {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;

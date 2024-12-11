@@ -54,6 +54,8 @@ export async function summarizeProject(project: Project): Promise<Project> {
 
     const result = res.choices[0].message.content;
 
+    console.log("summarize project result: ", result);
+
     const summarizedProject = JSON.parse(result || "{}");
     if (!summarizedProject.summary) {
       throw new Error("summary is invalid");

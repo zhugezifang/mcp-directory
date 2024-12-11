@@ -35,7 +35,7 @@ export async function findProjectByName(
 ): Promise<Project | undefined> {
   const supabase = getSupabaseClient();
   const { data, error } = await supabase
-    .from("users")
+    .from("projects")
     .select("*")
     .eq("name", name)
     .eq("status", ProjectStatus.Created)
@@ -94,6 +94,24 @@ export async function getFeaturedProjects(
   return data;
 }
 
+export async function getRandomProjects(
+  page: number,
+  limit: number
+): Promise<Project[]> {
+  const supabase = getSupabaseClient();
+  const { data, error } = await supabase
+    .from("projects")
+    .select("*")
+    .eq("status", ProjectStatus.Created)
+    .order("sort", { ascending: false })
+    .order("created_at", { ascending: false })
+    .range((page - 1) * limit, page * limit);
+
+  if (error) return [];
+
+  return data.sort(() => Math.random() - 0.5);
+}
+
 export async function getProjectsWithKeyword(
   keyword: string,
   page: number,
@@ -113,6 +131,18 @@ export async function getProjectsWithKeyword(
     .range((page - 1) * limit, page * limit);
 
   if (error) return [];
+
+  return data;
+}
+
+export async function updateProject(uuid: string, project: Partial<Project>) {
+  const supabase = getSupabaseClient();
+  const { data, error } = await supabase
+    .from("projects")
+    .update(project)
+    .eq("uuid", uuid);
+
+  if (error) throw error;
 
   return data;
 }

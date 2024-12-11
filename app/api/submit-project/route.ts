@@ -1,20 +1,16 @@
-import {
-  extractProject,
-  saveProject,
-  summarizeProject,
-} from "@/services/project";
+import { ProjectStatus, findProjectByName } from "@/models/project";
 import { respData, respErr } from "@/utils/resp";
 
-import { ProjectStatus } from "@/models/project";
+import { Project } from "@/types/project";
 import { genUuid } from "@/utils";
 import { getIsoTimestr } from "@/utils/time";
-import { readUrl } from "@/services/reader/jina";
+import { saveProject } from "@/services/project";
 
 export const runtime = "edge";
 
 export async function POST(req: Request) {
   try {
-    const { url, avatar_url } = await req.json();
+    let { name, title, description, url, avatar_url } = await req.json();
     if (!url) {
       return respErr("url is required");
     }
@@ -23,26 +19,41 @@ export async function POST(req: Request) {
       return respErr("mcp server url should start with https://github.com");
     }
 
-    const post = await readUrl(url);
-    if (!post || !post.content) {
-      return respErr("read url failed");
+    if (!name) {
+      const urlParts = url.split("/");
+      name = urlParts[urlParts.length - 1];
+      if (!name) {
+        return respErr("name is required");
+      }
     }
 
-    console.log("post", post);
+    if (!title) {
+      title = name
+        .split("-")
+        .map((word: string) => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(" ");
+    }
 
-    const project = await extractProject(post.content);
-    console.log("extracted project", project);
+    if (!avatar_url) {
+      avatar_url = `${url}/favicon.ico`;
+    }
 
-    project.content = post.content;
+    const existProject = await findProjectByName(name);
+    if (existProject) {
+      return respData(existProject);
+    }
 
-    // const summarizedProject = await summarizeProject(project);
-    // console.log("summarized project", summarizedProject);
+    const project: Project = {
+      name,
+      title,
+      description,
+      url,
+      avatar_url,
+    };
 
     const created_at = getIsoTimestr();
 
     project.uuid = genUuid();
-    project.url = post.url;
-    project.avatar_url = avatar_url || `${project.url}/favicon.ico`;
     project.created_at = created_at;
     project.updated_at = created_at;
     project.status = ProjectStatus.Created;
@@ -50,9 +61,6 @@ export async function POST(req: Request) {
     project.author_avatar_url = "";
     project.target = "_self";
 
-    // project.tags = summarizedProject.tags;
-    // project.category = summarizedProject.category;
-    // project.summary = summarizedProject.summary;
     project.is_featured = true;
     project.sort = 1;
 

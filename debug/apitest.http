@@ -1,10 +1,18 @@
-# @baseUrl = http://127.0.0.1:8051/api
-@baseUrl = https://mcp.so/api
+@baseUrl = http://127.0.0.1:8051/api
+# @baseUrl = https://mcp.so/api
 
 ###
 POST {{baseUrl}}/submit-project
 Content-Type: application/json
 
 {
-  "url": "https://github.com/KashiwaByte/vikingdb-mcp-server"
+  "url": "https://github.com/alexgoller/mcp-server-agenda"
+}
+
+###
+POST {{baseUrl}}/summarize-project
+Content-Type: application/json
+
+{
+  "name": "mcp-server-agenda"
 }

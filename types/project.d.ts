@@ -17,4 +17,5 @@ export interface Project {
   target?: "_blank" | "_self";
   content?: string;
   summary?: string;
+  img_url?: string;
 }

@@ -6,7 +6,7 @@ POST {{baseUrl}}/submit-project
 Content-Type: application/json
 
 {
-  "url": "https://github.com/alexgoller/mcp-server-agenda"
+  "url": "https://github.com/chatmcp/mcp-server-chatsum"
 }
 
 ###
@@ -14,5 +14,5 @@ POST {{baseUrl}}/summarize-project
 Content-Type: application/json
 
 {
-  "name": "mcp-server-agenda"
+  "name": "mcp-server-chatsum"
 }

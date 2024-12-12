@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "fast": "next dev --turbopack",
+    "watch": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",

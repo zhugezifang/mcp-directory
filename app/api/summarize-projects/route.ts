@@ -1,7 +1,7 @@
 import { respData, respErr } from "@/utils/resp";
 
 import { getProjectsWithoutSummary } from "@/models/project";
-import { sumProject } from "../summarize-project/route";
+import { sumProject } from "@/services/project";
 
 export const runtime = "edge";
 

@@ -1,8 +1,7 @@
+import { parseProject, saveProject } from "@/services/project";
 import { respData, respErr } from "@/utils/resp";
 
 import { Project } from "@/types/project";
-import { parseProject } from "../submit-project/route";
-import { saveProject } from "@/services/project";
 
 export const runtime = "edge";
 

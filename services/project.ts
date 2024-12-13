@@ -46,16 +46,6 @@ export function parseProject(project: Project): Project | undefined {
         .join(" ");
     }
 
-    const created_at = getIsoTimestr();
-
-    project.uuid = genUuid();
-    project.created_at = created_at;
-    project.updated_at = created_at;
-    project.status = ProjectStatus.Created;
-    project.target = "_self";
-    project.is_featured = true;
-    project.sort = 1;
-
     return project;
   } catch (e) {
     console.log("parse project failed", e);
@@ -141,7 +131,7 @@ export async function sumProject(project: Project): Promise<Project> {
     return project;
   } catch (e) {
     console.log("summarize project failed: ", e);
-    throw e;
+    return project;
   }
 }
 
@@ -188,9 +178,23 @@ export async function saveProject(
     }
 
     const existProject = await findProjectByName(project.name);
-    if (existProject) {
-      return existProject;
+
+    if (existProject && existProject.uuid) {
+      project.uuid = existProject.uuid;
+      project.created_at = existProject.created_at;
+      await updateProject(existProject.uuid, project);
+      return { ...existProject, ...project };
     }
+
+    const created_at = getIsoTimestr();
+
+    project.uuid = genUuid();
+    project.created_at = created_at;
+    project.updated_at = created_at;
+    project.status = ProjectStatus.Created;
+    project.target = "_self";
+    project.is_featured = true;
+    project.sort = 1;
 
     await insertProject(project);
 

@@ -6,7 +6,11 @@ POST {{baseUrl}}/submit-project
 Content-Type: application/json
 
 {
-  "url": "https://github.com/ch/mcp-server-chatsum"
+  "url": "https://github.com/minecraft-linux/mcpelauncher-server",
+  "content": "",
+  "status": "deleted",
+  "is_featured": false,
+  "sort": 0
 }
 
 ###
@@ -36,5 +40,5 @@ Content-Type: application/json
 
 {
   "page": 1,
-  "limit": 10
+  "limit": 200
 }

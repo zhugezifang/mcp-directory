@@ -6,8 +6,21 @@ POST {{baseUrl}}/submit-project
 Content-Type: application/json
 
 {
-  "url": "https://github.com/chatmcp/mcp-server-chatsum"
+  "url": "https://github.com/ch/mcp-server-chatsum"
 }
+
+###
+POST {{baseUrl}}/submit-projects
+Content-Type: application/json
+
+[
+  {
+    "url": "https://github.com/ch/mcp-server-chatsum1"
+  },
+  {
+    "url": "https://github.com/ch/mcp-server-chatsum2"
+  }
+]
 
 ###
 POST {{baseUrl}}/summarize-project

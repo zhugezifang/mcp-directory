@@ -1,8 +1,9 @@
+import { findProjectByName, insertProject } from "@/models/project";
+
 import { ChatCompletionCreateParamsNonStreaming } from "openai/resources/index.mjs";
 import { Project } from "@/types/project";
 import { extractProjectPrompt } from "@/services/prompts/extract_project";
 import { getOpenAIClient } from "@/services/llms/openai";
-import { insertProject } from "@/models/project";
 import { summarizeProjectPrompt } from "./prompts/summarize_project";
 
 export async function extractProject(content: string): Promise<Project> {
@@ -68,10 +69,24 @@ export async function summarizeProject(project: Project): Promise<Project> {
   }
 }
 
-export async function saveProject(project: Project): Promise<void> {
+export async function saveProject(
+  project: Project
+): Promise<Project | undefined> {
   try {
+    if (!project.name) {
+      throw new Error("invalid project");
+    }
+
+    const existProject = await findProjectByName(project.name);
+    if (existProject) {
+      return existProject;
+    }
+
     await insertProject(project);
+
+    return project;
   } catch (e) {
     console.error("save project failed: ", e);
+    throw e;
   }
 }

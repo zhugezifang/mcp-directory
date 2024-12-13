@@ -1,6 +1,7 @@
 import { findProjectByName, updateProject } from "@/models/project";
 import { respData, respErr } from "@/utils/resp";
 
+import { Project } from "@/types/project";
 import { getIsoTimestr } from "@/utils";
 import { readUrl } from "@/services/reader/jina";
 import { summarizeProject } from "@/services/project";
@@ -9,7 +10,7 @@ export const runtime = "edge";
 
 export async function POST(req: Request) {
   try {
-    let { name, content_url, avatar_url } = await req.json();
+    let { name } = await req.json();
     if (!name) {
       return respErr("name is required");
     }
@@ -19,18 +20,27 @@ export async function POST(req: Request) {
       return respErr("invalid project");
     }
 
-    if (!content_url) {
-      content_url = project.url;
+    const summarizedProject = await sumProject(project);
+
+    return respData(summarizedProject);
+  } catch (e) {
+    console.log("summarize project failed: ", e);
+    return respErr("summarize project failed");
+  }
+}
+
+export async function sumProject(project: Project): Promise<Project> {
+  try {
+    if (!project || !project.uuid || !project.name || !project.url) {
+      throw new Error("invalid project");
     }
+
+    let content_url = project.url;
 
     if (content_url.startsWith("https://github.com")) {
       const githubUrl = new URL(content_url);
       const [owner, repo] = githubUrl.pathname.slice(1).split("/");
       content_url = `https://raw.githubusercontent.com/${owner}/${repo}/main/README.md`;
-    }
-
-    if (avatar_url) {
-      project.avatar_url = avatar_url;
     }
 
     console.log("project", project, content_url);
@@ -61,9 +71,9 @@ export async function POST(req: Request) {
       await updateProject(project.uuid, project);
     }
 
-    return respData(project);
+    return project;
   } catch (e) {
     console.log("summarize project failed: ", e);
-    return respErr("summarize project failed");
+    throw e;
   }
 }

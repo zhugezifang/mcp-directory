@@ -10,46 +10,56 @@ export const runtime = "edge";
 
 export async function POST(req: Request) {
   try {
-    let { name, title, description, url, avatar_url } = await req.json();
-    if (!url) {
-      return respErr("url is required");
+    let project: Project = await req.json();
+
+    const parsedProject = parseProject(project);
+    if (!parsedProject) {
+      return respErr("invalid project");
     }
 
-    if (!url.startsWith("https://github.com")) {
-      return respErr("mcp server url should start with https://github.com");
+    const savedProject = await saveProject(parsedProject);
+    if (!savedProject) {
+      return respErr("save project failed");
     }
 
-    if (!name) {
-      const urlParts = url.split("/");
-      name = urlParts[urlParts.length - 1];
-      if (!name) {
-        return respErr("name is required");
+    return respData(savedProject);
+  } catch (e) {
+    console.log("submit project failed", e);
+    return respErr("submit project failed");
+  }
+}
+
+export function parseProject(project: Project): Project | undefined {
+  try {
+    if (!project || !project.url) {
+      return;
+    }
+
+    if (!project.url.startsWith("https://github.com")) {
+      return;
+    }
+
+    if (!project.name) {
+      const urlParts = project.url.split("/");
+      project.name = urlParts[urlParts.length - 1];
+      if (!project.name) {
+        return;
       }
     }
 
-    if (!title) {
-      title = name
+    if (!project.author_name) {
+      const urlParts = project.url.split("/");
+      if (urlParts.length > 2) {
+        project.author_name = urlParts[urlParts.length - 2];
+      }
+    }
+
+    if (!project.title) {
+      project.title = project.name
         .split("-")
         .map((word: string) => word.charAt(0).toUpperCase() + word.slice(1))
         .join(" ");
     }
-
-    if (!avatar_url) {
-      avatar_url = `${url}/favicon.ico`;
-    }
-
-    const existProject = await findProjectByName(name);
-    if (existProject) {
-      return respData(existProject);
-    }
-
-    const project: Project = {
-      name,
-      title,
-      description,
-      url,
-      avatar_url,
-    };
 
     const created_at = getIsoTimestr();
 
@@ -57,18 +67,13 @@ export async function POST(req: Request) {
     project.created_at = created_at;
     project.updated_at = created_at;
     project.status = ProjectStatus.Created;
-
-    project.author_avatar_url = "";
     project.target = "_self";
-
     project.is_featured = true;
     project.sort = 1;
 
-    await saveProject(project);
-
-    return respData(project);
+    return project;
   } catch (e) {
-    console.log("submit project failed", e);
-    return respErr("submit project failed");
+    console.log("parse project failed", e);
+    return;
   }
 }

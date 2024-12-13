@@ -32,5 +32,6 @@ CREATE TABLE projects (
     url VARCHAR(255),
     target VARCHAR(50),
     content TEXT,
-    summary TEXT
+    summary TEXT,
+    img_url TEXT
 );

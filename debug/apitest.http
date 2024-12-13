@@ -27,5 +27,14 @@ POST {{baseUrl}}/summarize-project
 Content-Type: application/json
 
 {
-  "name": "mcp-server-chatsum"
+  "name": "git"
+}
+
+###
+POST {{baseUrl}}/summarize-projects
+Content-Type: application/json
+
+{
+  "page": 1,
+  "limit": 10
 }

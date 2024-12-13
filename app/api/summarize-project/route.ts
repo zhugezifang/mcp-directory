@@ -40,7 +40,11 @@ export async function sumProject(project: Project): Promise<Project> {
     if (content_url.startsWith("https://github.com")) {
       const githubUrl = new URL(content_url);
       const [owner, repo] = githubUrl.pathname.slice(1).split("/");
-      content_url = `https://raw.githubusercontent.com/${owner}/${repo}/main/README.md`;
+      if (owner === "modelcontextprotocol") {
+        content_url = `https://raw.githubusercontent.com/${owner}/servers/main/src/${project.name}/README.md`;
+      } else {
+        content_url = `https://raw.githubusercontent.com/${owner}/${repo}/main/README.md`;
+      }
     }
 
     console.log("project", project, content_url);
@@ -50,7 +54,7 @@ export async function sumProject(project: Project): Promise<Project> {
     if (!project.content && content_url) {
       const post = await readUrl(content_url);
       console.log("post", post);
-      if (post && post.content) {
+      if (post && post.content && post.content.length > 100) {
         project.content = post.content;
         project.updated_at = getIsoTimestr();
       }

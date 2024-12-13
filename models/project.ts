@@ -46,8 +46,6 @@ export async function findProjectByName(
   return data;
 }
 
-
-
 export async function getProjects(
   page: number,
   limit: number
@@ -60,7 +58,7 @@ export async function getProjects(
     .eq("status", ProjectStatus.Created)
     .order("sort", { ascending: false })
     .order("created_at", { ascending: false })
-    .range((page - 1) * limit, page * limit);
+    .range((page - 1) * limit, page * limit - 1);
 
   if (error) return [];
 
@@ -89,7 +87,7 @@ export async function getFeaturedProjects(
     .eq("status", ProjectStatus.Created)
     .order("sort", { ascending: false })
     .order("created_at", { ascending: false })
-    .range((page - 1) * limit, page * limit);
+    .range((page - 1) * limit, page * limit - 1);
 
   if (error) return [];
 
@@ -107,7 +105,7 @@ export async function getRandomProjects(
     .eq("status", ProjectStatus.Created)
     .order("sort", { ascending: false })
     .order("created_at", { ascending: false })
-    .range((page - 1) * limit, page * limit);
+    .range((page - 1) * limit, page * limit - 1);
 
   if (error) return [];
 
@@ -130,7 +128,32 @@ export async function getProjectsWithKeyword(
     .eq("status", ProjectStatus.Created)
     .order("sort", { ascending: false })
     .order("created_at", { ascending: false })
-    .range((page - 1) * limit, page * limit);
+    .range((page - 1) * limit, page * limit - 1);
+
+  if (error) return [];
+
+  return data;
+}
+
+export async function getProjectsWithoutSummary(
+  page: number,
+  limit: number
+): Promise<Project[]> {
+  if (!page) {
+    page = 1;
+  }
+
+  if (!limit) {
+    limit = 20;
+  }
+
+  const supabase = getSupabaseClient();
+  const { data, error } = await supabase
+    .from("projects")
+    .select("*")
+    .is("summary", null)
+    .eq("status", ProjectStatus.Created)
+    .range((page - 1) * limit, page * limit - 1);
 
   if (error) return [];
 

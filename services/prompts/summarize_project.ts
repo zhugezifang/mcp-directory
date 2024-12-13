@@ -2,10 +2,13 @@ export const summarizeProjectPrompt = `You are a project analyzer. Your task is 
 
 Please analyze the given project information and output a JSON object with the following structure:
 {
-  "tags": ["ai-chatbot", "ai-agent", "ai-tool"],
-  "category": "ai-chatbot",
+  "tags": ["mathgpt", "math-solver", "math-assistant"],
+  "category": "research-and-data",
   "summary": "string"
 }
+
+category should be one of the following:
+browser-automation, cloud-platforms, communication, customer-data-platforms, databases, developer-tools, file-systems, knowledge-and-memory, location-services, monitoring, search, travel-and-transportation, version-control, virtualization, finance, research-and-data, os-automation, note-taking, cloud-storage, calendar-management, entertainment-and-media, speech-processing, image-and-video-processing, security
 
 the summary should contain the following information:
 - what is the project about?
@@ -16,8 +19,8 @@ the summary should contain the following information:
 
 Example of the response JSON:
 {
-    "tags": ["ai-chatbot", "ai-agent", "ai-tool"],
-    "category": "ai-chatbot",
+    "tags": ["mathgpt", "math-solver", "math-assistant"],
+    "category": "research-and-data",
     "summary": "## what is MathGPT? 
     MathGPT is a math learning assistant that can help you learn math and solve math problems.
 

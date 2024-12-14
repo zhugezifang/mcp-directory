@@ -49,6 +49,7 @@ export default ({ query }: Props) => {
   useEffect(() => {
     if (query) {
       setContent(query);
+      setInputDisabled(false);
     }
   }, [query]);
 

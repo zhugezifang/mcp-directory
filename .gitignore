@@ -43,3 +43,5 @@ supabase
 wrangler.toml
 .wrangler
 .vscode
+
+app/api/update-sitemaps

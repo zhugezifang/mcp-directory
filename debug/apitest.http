@@ -42,3 +42,13 @@ Content-Type: application/json
   "page": 1,
   "limit": 200
 }
+
+###
+POST {{baseUrl}}/update-sitemaps
+Content-Type: application/json
+
+{
+  "batch_no": 1,
+  "limit": 500,
+  "page_step": 5
+}

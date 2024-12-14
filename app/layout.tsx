@@ -24,6 +24,7 @@ export default function RootLayout({
           name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no"
         />
+        <meta name="google-adsense-account" content="ca-pub-2123767634383915" />
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body

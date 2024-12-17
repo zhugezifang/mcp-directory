@@ -1,4 +1,5 @@
 import BgStar from "../../assets/imgs/bgstar.svg";
+import Buttons from "./buttons";
 import { Hero } from "@/types/landing";
 
 export default ({ hero, count }: { hero: Hero; count?: number }) => {
@@ -25,6 +26,7 @@ export default ({ hero, count }: { hero: Hero; count?: number }) => {
         alt="bgstar"
         className="absolute bottom-[auto] right-[auto] left-0 top-60 -z-10 inline-block max-[767px]:hidden"
       />
+      <Buttons />
     </section>
   );
 };

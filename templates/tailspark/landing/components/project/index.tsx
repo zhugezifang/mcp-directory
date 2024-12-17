@@ -1,6 +1,7 @@
 import { BiCategory } from "react-icons/bi";
 import { BsTags } from "react-icons/bs";
-import Crumb from "../crumb";
+import { Category } from "@/types/category";
+import Crumb from "./crumb";
 import Markdown from "@/components/markdown";
 import Preview from "./preview";
 import { Project } from "@/types/project";
@@ -9,22 +10,22 @@ import Stars from "../stars";
 import moment from "moment";
 
 export default ({
+  category,
   project,
   more_projects,
 }: {
+  category?: Category;
   project: Project;
   more_projects?: Project[];
 }) => {
   const tagsArr = project.tags ? project.tags.split(",") : [];
 
   return (
-    <section>
-      <div className="mx-auto w-full max-w-7xl px-5 py-8 md:px-10 md:py-8 lg:py-8">
-        <div className="w-full mb-4 text-lg">
-          <Crumb project={project} />
-        </div>
+    <div className="mx-auto max-w-7xl px-5 py-4 md:px-10 md:py-4 lg:py-4">
+      <Crumb category={category} project={project} />
 
-        <div className="grid gap-12 sm:gap-20 lg:grid-cols-2">
+      <div className="mx-auto w-full max-w-7xl py-8 md:py-8 lg:py-8">
+        <div className="grid gap-12 sm:gap-20 lg:grid-cols-2 mt-8">
           <div className="flex flex-col items-start gap-2">
             <h1 className="text-4xl font-bold md:text-6xl">{project.title}</h1>
 
@@ -102,6 +103,6 @@ export default ({
         <p className="mx-auto font-bold text-3xl mt-16 mb-4">View More</p>
         {more_projects && <Projects projects={more_projects} />}
       </div>
-    </section>
+    </div>
   );
 };

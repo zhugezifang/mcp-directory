@@ -15,7 +15,7 @@ export default ({ project }: { project: Project }) => {
       }
       target={project.target || "_self"}
     >
-      <div className="mb-6 gap-6 overflow-hidden rounded-2xl border border-solid border-[#7e7e7e] bg-white p-8">
+      <div className="mb-6 gap-6 overflow-hidden rounded-2xl border border-solid border-[#7e7e7e] bg-white p-8 text-left">
         <div className="mb-4 flex flex-row">
           {project.avatar_url && (
             <LazyLoadImage
@@ -30,7 +30,9 @@ export default ({ project }: { project: Project }) => {
             <p className="text-sm text-[#636262]">{project.author_name}</p>
           </div>
         </div>
-        <p className="mb-4 text-sm text-[#636262]">{project.description}</p>
+        <p className="mb-4 text-sm text-[#636262] line-clamp-3">
+          {project.description}
+        </p>
 
         <div className="flex items-center">
           {true && <Stars />}

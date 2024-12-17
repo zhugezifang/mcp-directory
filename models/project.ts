@@ -67,11 +67,50 @@ export async function getProjects(
 
 export async function getProjectsCount(): Promise<number> {
   const supabase = getSupabaseClient();
-  const { data, error } = await supabase.from("projects").select("count");
+  const { data, error } = await supabase
+    .from("projects")
+    .select("count")
+    .eq("status", ProjectStatus.Created);
 
   if (error) return 0;
 
   return data?.[0]?.count || 0;
+}
+
+export async function getProjectsCountByCategory(
+  category: string
+): Promise<number> {
+  const supabase = getSupabaseClient();
+  const { data, error } = await supabase
+    .from("projects")
+    .select("count")
+    .eq("category", category)
+    .eq("status", ProjectStatus.Created);
+
+  if (error) return 0;
+
+  return data?.[0]?.count || 0;
+}
+
+export async function getProjectsByCategory(
+  category: string,
+  page: number,
+  limit: number
+): Promise<Project[]> {
+  const supabase = getSupabaseClient();
+
+  const { data, error } = await supabase
+    .from("projects")
+    .select("*")
+    .eq("category", category)
+    .eq("status", ProjectStatus.Created)
+    .order("sort", { ascending: false })
+    .order("created_at", { ascending: false })
+    .range((page - 1) * limit, page * limit - 1);
+
+  if (error) return [];
+
+  return data;
 }
 
 export async function getFeaturedProjects(

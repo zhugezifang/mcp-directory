@@ -35,3 +35,15 @@ CREATE TABLE projects (
     summary TEXT,
     img_url TEXT
 );
+
+CREATE TABLE categories (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) UNIQUE NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    status VARCHAR(50),
+    created_at timestamptz
+);
+
+CREATE INDEX idx_projects_category_query ON projects(category, status, sort DESC, created_at DESC);
+
+CREATE INDEX idx_projects_featured_query ON projects(is_featured, status, sort DESC, created_at DESC);

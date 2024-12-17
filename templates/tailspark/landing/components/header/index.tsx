@@ -10,11 +10,11 @@ export default ({ header }: { header: Header }) => {
   const pathname = usePathname();
 
   return (
-    <header className="mx-auto w-full max-w-7xl px-4 md:px-10 mt-4 md:mt-4">
+    <header className="mx-auto w-full max-w-7xl px-4 md:px-8 mt-4 md:mt-4">
       <div className="flex items-center">
         <p className="text-lg md:text-3xl font-medium ">
           <a
-            className="flex items-center bg-cover bg-center px-3 py-3 md:px-4 md:py-4 m text-primary cursor-pointer font-bold"
+            className="flex items-center bg-cover bg-center py-3 px-2 md:py-4 m text-primary cursor-pointer font-bold"
             href={header?.brand?.url}
           >
             <img

@@ -56,7 +56,7 @@ export default ({ query }: Props) => {
     };
     //router.events.on('routeChangeComplete', handleRouteChange);
     return () => {
-      router.events.off('routeChangeComplete', handleRouteChange);
+      //router.events.off('routeChangeComplete', handleRouteChange);
     };
   }, []);
 

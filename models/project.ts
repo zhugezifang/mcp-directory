@@ -2,7 +2,7 @@ import { Project } from "@/types/project";
 import { getSupabaseClient } from "./db";
 
 export enum ProjectStatus {
-  Created = "created",
+  Created = "active",
   Deleted = "deleted",
 }
 

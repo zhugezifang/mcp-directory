@@ -54,7 +54,7 @@ export default ({ query }: Props) => {
     const handleRouteChange = () => {
       setInputDisabled(false); // Re-enable input after route change
     };
-    router.events.on('routeChangeComplete', handleRouteChange);
+    //router.events.on('routeChangeComplete', handleRouteChange);
     return () => {
       router.events.off('routeChangeComplete', handleRouteChange);
     };

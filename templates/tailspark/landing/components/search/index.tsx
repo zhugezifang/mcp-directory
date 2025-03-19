@@ -22,7 +22,7 @@ export default ({ query }: Props) => {
     setContent(e.target.value);
   };
 
-  const handleInputKeydown = (e: KeyboardEvent<HTMLInputElement>) => {
+  const handleInputKeydown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.code === "Enter" && !e.shiftKey) {
       if (e.keyCode !== 229) {
         e.preventDefault();

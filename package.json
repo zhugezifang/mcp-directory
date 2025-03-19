@@ -27,7 +27,7 @@
     "xmlbuilder": "^15.1.1"
   },
   "devDependencies": {
-    "@cloudflare/next-on-pages": "^1.13.6",
+    "@cloudflare/next-on-pages": "^1.6.3",
     "@types/markdown-it": "^14.1.2",
     "@types/node": "^20",
     "@types/react": "^18",

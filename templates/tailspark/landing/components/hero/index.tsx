@@ -26,7 +26,7 @@ export default ({ hero, count }: { hero: Hero; count?: number }) => {
         alt="bgstar"
         className="absolute bottom-[auto] right-[auto] left-0 top-60 -z-10 inline-block max-[767px]:hidden"
       />
-      <Buttons />
+      {/*<Buttons />*/}
     </section>
   );
 };

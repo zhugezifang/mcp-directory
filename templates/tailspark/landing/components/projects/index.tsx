@@ -1,7 +1,7 @@
 "use client";
 
 import { Project } from "@/types/project";
-import ProjectItem from "./item";
+import ProjectItem from "./qipuItem";
 
 export default ({
   projects,

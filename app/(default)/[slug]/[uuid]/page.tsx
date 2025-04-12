@@ -1,4 +1,4 @@
-import { findProjectByName, getRandomProjects } from "@/models/project";
+import { findProjectByUuid, getRandomProjects } from "@/models/project";
 
 import Single from "@/templates/tailspark/landing/pages/single";
 import { findCategoryByName } from "@/models/category";
@@ -9,10 +9,10 @@ export const runtime = "edge";
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ name: string }>;
+  params: Promise<{ uuid: string }>;
 }) {
-  const { name } = await params;
-  const project = await findProjectByName(name);
+  const { uuid } = await params;
+  const project = await findProjectByUuid(uuid);
 
   return {
     title: `${project?.title || "-"} | ${pagejson?.metadata?.title}`,
@@ -20,7 +20,7 @@ export async function generateMetadata({
       project?.description || "-"
     }`,
     alternates: {
-      canonical: `${process.env.NEXT_PUBLIC_WEB_URL}/server/${name}`,
+      canonical: `${process.env.NEXT_PUBLIC_WEB_URL}/qipu/${uuid}`,
     },
   };
 }
@@ -28,18 +28,21 @@ export async function generateMetadata({
 export default async function ({
   params,
 }: {
-  params: Promise<{ name: string }>;
+  params: Promise<{ uuid: string }>;
 }) {
-  const { name } = await params;
+  const { uuid } = await params;
 
-  const project = await findProjectByName(name);
+  console.log(uuid);
+
+  const project = await findProjectByUuid(uuid);
+  console.log(project);
   if (!project || !project.uuid) {
     return <div>Project not found</div>;
   }
 
   const category = await findCategoryByName(project.category || "");
 
-  const more_projects = await getRandomProjects(1, 50);
+  const more_projects = await getRandomProjects(1, 10);
 
   return (
     <Single

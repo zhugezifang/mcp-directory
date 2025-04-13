@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "title": "简历模板",
-    "description": "The largest collection of MCP Servers, including Awesome MCP Servers and Claude MCP integration. Search and discover MCP servers to enhance your AI capabilities.",
+    "title": "免费简历模板",
+    "description": "免费简历模板网站提供2025年多种免费简历模板，帮助求职者轻松制作专业简历。我们的模板简洁美观，适用于不同职业和行业，免费下载使用，能够让你在求职过程中脱颖而出！",
     "keywords": "简历模板, 免费简历模板"
   },
   "header": {
@@ -27,40 +27,28 @@
     "description": " 免费简历模板"
   },
   "faq": {
-    "title": "FAQ",
-    "description": "Frequently Asked Questions about MCP Servers",
+    "title": "常见问题",
+    "description": "常见问题关于简历模板",
     "items": [
       {
-        "title": "What is MCP (Model Context Protocol)?",
-        "description": "MCP is an open-source protocol developed by Anthropic that enables AI systems like Claude to securely connect with various data sources. It provides a universal standard for AI assistants to access external data, tools, and prompts through a client-server architecture."
+        "title": "什么是简历模板？",
+        "description": "简历模板是一种预先设计的格式，可以帮助求职者快速而有效地撰写个人简历。它通常包括不同的部分，如个人信息、教育背景、工作经验、技能和联系方式等。使用简历模板，可以确保你的简历结构清晰，内容完整，从而提高求职成功的机会。"
       },
       {
-        "title": "What are MCP Servers?",
-        "description": "MCP Servers are systems that provide context, tools, and prompts to AI clients. They can expose data sources like files, documents, databases, and API integrations, allowing AI assistants to access real-time information in a secure way."
+        "title": "如何选择合适的简历模板？",
+        "description": "选择简历模板时，首先要考虑你所申请的行业和职位。不同的行业对简历的风格有不同的要求，创意行业可能更倾向于独特和视觉吸引的设计，而传统行业则可能更喜欢简洁和正式的风格。此外，要确保模板易于阅读，信息组织清晰，避免过于复杂的设计。"
       },
       {
-        "title": "How do MCP Servers work?",
-        "description": "MCP Servers work through a simple client-server architecture. They expose data and tools through a standardized protocol, maintaining secure 1:1 connections with clients inside host applications like Claude Desktop."
+        "title": "简历模板是否需要个性化？",
+        "description": "是的，尽管简历模板提供了一个基本框架，但你仍需要根据自己的背景和申请的职位来个性化内容。确保突出你的相关经验和技能，添加个性化的描述，避免仅仅填充模板上的内容。个性化的简历更能吸引招聘经理的注意。"
       },
       {
-        "title": "What can MCP Servers provide?",
-        "description": "MCP Servers can share resources (files, docs, data), expose tools (API integrations, actions), and provide prompts (templated interactions). They control their own resources and maintain clear system boundaries for security."
+        "title": "使用简历模板会影响求职成功吗？",
+        "description": "使用简历模板可以提高求职成功的机会，前提是你选择的模板适合你的行业，并且内容经过合理编辑和个性化。一个结构良好且易于阅读的简历能够迅速传达你的资历和经验，给招聘经理留下深刻印象。但若只是一味使用模板而不进行个性化调整，可能会导致简历看起来缺乏诚意。"
       },
       {
-        "title": "How does Claude use MCP?",
-        "description": "Claude can connect to MCP servers to access external data sources and tools, enhancing its capabilities with real-time information. Currently, this works with local MCP servers, with enterprise remote server support coming soon."
-      },
-      {
-        "title": "Are MCP Servers secure?",
-        "description": "Yes, security is built into the MCP protocol. Servers control their own resources, there's no need to share API keys with LLM providers, and the system maintains clear boundaries. Each server manages its own authentication and access control."
-      },
-      {
-        "title": "What is mcp.so?",
-        "description": "mcp.so is a community-driven platform that collects and organizes third-party MCP Servers. It serves as a central directory where users can discover, share, and learn about various MCP Servers available for AI applications."
-      },
-      {
-        "title": "How can I submit my MCP Server to mcp.so?",
-        "description": "You can submit your MCP Server by creating a new issue in our GitHub repository. Click the 'Submit' button in the navigation bar or visit our GitHub issues page directly. Please provide details about your server including its name, description, features, and connection information."
+        "title": "在书写简历中需要避免哪些常见错误？",
+        "description": "在书写简历的时候，最常见的错误包括：信息过于冗长或不相关、格式不一致、拼写和语法错误、缺乏针对性等。务必确保简历清晰简洁，突出你的优势和成就，以及对所申请职位的相关性。此外，在提交前请仔细检查各个细节，确保无误。"
       }
     ]
   },
@@ -71,7 +59,7 @@
       "domain": "https://mcp.so"
     },
     "copyright": {
-      "owner": "mcp.so",
+      "owner": "简历模板",
       "text": "All rights reserved",
       "url": "https://mcp.so",
       "target": "_blank"
@@ -98,17 +86,7 @@
           "children": [
             {
               "title": "Model Context Protocol",
-              "url": "https://www.anthropic.com/news/model-context-protocol",
-              "target": "_blank"
-            },
-            {
-              "title": "MCP Starter Guide",
-              "url": "https://modelcontextprotocol.io/introduction",
-              "target": "_blank"
-            },
-            {
-              "title": "Claude MCP Servers",
-              "url": "https://github.com/modelcontextprotocol/servers",
+              "url": "",
               "target": "_blank"
             }
           ]
@@ -120,16 +98,6 @@
               "title": "Telegram",
               "url": "https://t.me/+N0gv4O9SXio2YWU1",
               "target": "_blank"
-            },
-            {
-              "title": "Discord",
-              "url": "https://discord.gg/RsYPRrnyqg",
-              "target": "_blank"
-            },
-            {
-              "title": "GitHub",
-              "url": "https://github.com/mcpservers/awesome-mcp-servers/issues/1",
-              "target": "_blank"
             }
           ]
         },
@@ -140,16 +108,6 @@
               "title": "ThinkAny",
               "url": "https://thinkany.ai",
               "target": "_blank"
-            },
-            {
-              "title": "HeyBeauty",
-              "url": "https://heybeauty.ai",
-              "target": "_blank"
-            },
-            {
-              "title": "PodLM",
-              "url": "https://podlm.ai",
-              "target": "_blank"
             }
           ]
         }
@@ -158,8 +116,8 @@
     "social": {
       "items": {
         "email": {
-          "title": "support@mcp.so",
-          "url": "mailto:support@mcp.so"
+          "title": "support@cv-template",
+          "url": "mailto:xiaoqiu2017wy@gmail.com"
         }
       }
     }

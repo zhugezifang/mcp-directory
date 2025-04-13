@@ -6,7 +6,7 @@ export default ({ footer }: { footer: Footer }) => {
   return (
     <footer className="block">
       <div className="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24">
-        <div className="flex flex-row justify-between max-[767px]:flex-col max-[767px]:items-start">
+        {/*<div className="flex flex-row justify-between max-[767px]:flex-col max-[767px]:items-start">
           <div className="max-[767px]: w-full max-w-[560px] max-[991px]:mr-4 max-[991px]:flex-initial">
             <p className="text-lg md:text-3xl font-normal md:leading-relaxed">
               {footer?.brand?.description}
@@ -32,6 +32,7 @@ export default ({ footer }: { footer: Footer }) => {
             </div>
           </div>
         </div>
+        */}
         <div className="mb-14 mt-16 w-full [border-bottom:1.7px_solid_rgb(0,_0,_0)]"></div>
         <div className="flex flex-row justify-between max-[991px]:items-center max-[767px]:flex-col max-[767px]:items-start max-[479px]:flex-col-reverse">
           {footer?.nav?.items?.map((item: Item, idx: number) => {

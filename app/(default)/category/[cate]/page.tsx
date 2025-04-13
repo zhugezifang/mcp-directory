@@ -21,10 +21,10 @@ export async function generateMetadata({
 
   if (cate) {
     const category = await findCategoryByName(cate);
-    title = `Awesome MCP Servers for ${category?.title || "-"} | ${
+    title = `${category?.title || "-"} | ${
       pageJson?.metadata?.title
     }`;
-    description = `Find Awesome MCP Servers for category: ${
+    description = `${
       category?.title || "-"
     }`;
   }
@@ -54,7 +54,7 @@ export default async function ({
     return <div>Category not found</div>;
   }
 
-  const projects = await getProjectsByCategory(cate, 1, 30);
+  const projects = await getProjectsByCategory(cate, 1, 200);
   category.projects_count = await getProjectsCountByCategory(cate);
 
   return <Category category={category} projects={projects} />;

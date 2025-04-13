@@ -7,8 +7,8 @@ export const runtime = "edge";
 
 export async function generateMetadata() {
   return {
-    title: `MCP Server Categories | ${pageJson?.metadata?.title}`,
-    description: `Find Awesome MCP Server categories for your needs`,
+    title: '简历模板分类',
+    description: '简历模板分类',
     alternates: {
       canonical: `${process.env.NEXT_PUBLIC_WEB_URL}/categories`,
     },

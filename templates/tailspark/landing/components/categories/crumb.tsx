@@ -9,7 +9,7 @@ export default () => {
           <div>
             <a className="text-gray-400 hover:text-gray-500" href="/">
               <FiHome />
-              <span className="sr-only">Home</span>
+              <span className="sr-only">主页</span>
             </a>
           </div>
         </li>
@@ -21,7 +21,7 @@ export default () => {
               className="ml-2 text-md font-medium text-primary"
               aria-current="page"
             >
-              Categories
+              分类
             </a>
           </div>
         </li>

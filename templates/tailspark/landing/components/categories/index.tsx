@@ -16,12 +16,9 @@ export default function ({
       <Crumb />
       <div className="mt-16 text-center">
         <h1 className="text-4xl text-primary font-bold mb-2">
-          MCP Server Categories
+          简历模板分类
         </h1>
 
-        <h2 className="mx-auto font-bold text-3xl mt-16 mb-4">
-          All Categories
-        </h2>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
@@ -46,7 +43,7 @@ export default function ({
 
       <div className="w-full text-center">
         <h2 className="mx-auto font-bold text-3xl mt-16 mb-4">
-          Featured MCP Servers
+          精选简历模板
         </h2>
         {projects && <Projects projects={projects} />}
       </div>

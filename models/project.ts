@@ -70,6 +70,7 @@ export async function getProjectsCount(): Promise<number> {
   const { data, error } = await supabase
     .from("projects")
     .select("count")
+    //.filter("category", "is", null)
     //.eq("status", ProjectStatus.Created);
 
   if (error) return 0;
@@ -85,6 +86,7 @@ export async function getProjectsCountByCategory(
     .from("projects")
     .select("count")
     .eq("category", category)
+    .range(0,10);
     //.eq("status", ProjectStatus.Created);
 
   if (error) return 0;
@@ -110,6 +112,49 @@ export async function getProjectsByCategory(
 
   if (error) return [];
 
+  return data;
+}
+
+
+export async function updateProjectCategoryById(
+  category: string,id:string
+): Promise<Project | undefined> {
+  const cli = getSupabaseClient();
+
+  const { data, error } = await cli
+    .from("projects")
+    .update({ category: category })
+    .eq("uuid", id);
+
+  if (error) {
+    if (error.code === "PGRST116") {
+      return undefined;
+    }
+
+    throw error;
+  }
+
+  if (!data) {
+    return undefined;
+  }
+}
+
+
+export async function getProjectsIsNullCategory(
+): Promise<Project[]> {
+  const supabase = getSupabaseClient();
+
+  const { data, error } = await supabase
+    .from("projects")
+    .select("*")
+    .filter("category", "is", null)
+    //.eq("is_featured", true)
+    //.eq("status", ProjectStatus.Created)
+    .order("id", { ascending: true })
+    //.order("created_at", { ascending: false })
+    .range(0,300);
+
+  if (error) return [];
   return data;
 }
 

@@ -19,7 +19,7 @@ export default ({ project }: { project: Project }) => {
         <img               
         src={project.avatar_url}
         alt={project.name} className="w-full h-auto max-h-[336px] object-contain rounded-lg"/>
-        <h2 className="text-xl font-semibold">{project.name}</h2>
+        <h2 className="text-xl font-semibold mt-4">{project.name}</h2>
       </div>
     </Link>
   );

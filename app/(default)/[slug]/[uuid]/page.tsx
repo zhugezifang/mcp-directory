@@ -15,12 +15,14 @@ export async function generateMetadata({
   const project = await findProjectByUuid(uuid);
 
   return {
-    title: `${project?.title || "-"} | ${pagejson?.metadata?.title}`,
-    description: `${project?.title || "-"}: ${
+    title: `${project?.name || "-"} | ${pagejson?.metadata?.title}`,
+    description: `${project?.name}`,
+
+    /*description: `${project?.name || "-"}: ${
       project?.description || "-"
-    }`,
+    }`,*/
     alternates: {
-      canonical: `${process.env.NEXT_PUBLIC_WEB_URL}/qipu/${uuid}`,
+      canonical: `${process.env.NEXT_PUBLIC_WEB_URL}/resume/${uuid}`,
     },
   };
 }

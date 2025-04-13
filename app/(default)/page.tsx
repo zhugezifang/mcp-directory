@@ -21,7 +21,7 @@ export default async function ({
   if (q) {
     projects = await getProjectsWithKeyword(q as string, 1, 100);
   } else {
-    projects = await getFeaturedProjects(1, 9);
+    projects = await getFeaturedProjects(1, 24);
   }
 
   const projectsCount = await getProjectsCount();

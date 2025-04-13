@@ -61,7 +61,7 @@ export default ({
       )}
 
       <div className="w-full text-center">
-        <p className="mx-auto font-bold text-3xl mt-16 mb-4">View More</p>
+        <p className="mx-auto font-bold text-3xl mt-16 mb-4">更多简历模板</p>
         {more_projects && <Projects projects={more_projects} />}
       </div>
     </div>

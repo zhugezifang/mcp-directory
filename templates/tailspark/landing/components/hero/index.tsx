@@ -10,10 +10,10 @@ export default ({ hero, count }: { hero: Hero; count?: number }) => {
           <h1 className="text-primary leading-tight text-5xl font-bold md:text-6xl">
             {hero.title}
           </h1>
-          <h2 className="mt-4 mb-4 md:mt-8 md:mb-4 text-2xl md:text-3xl text-center">
+          {/*<h2 className="mt-4 mb-4 md:mt-8 md:mb-4 text-2xl md:text-3xl text-center">
             <span className="text-primary font-bold">{count}</span>{" "}
             {hero.description}
-          </h2>
+          </h2>*/}
         </div>
       </div>
       <img

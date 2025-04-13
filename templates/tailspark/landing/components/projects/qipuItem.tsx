@@ -11,7 +11,7 @@ export default ({ project }: { project: Project }) => {
       href={
         project.target === "_blank"
           ? project.url || ""
-          : `/qipu/${project.uuid}`
+          : `/resume/${project.uuid}`
       }
       target={project.target || "_self"}
     >

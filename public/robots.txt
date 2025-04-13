@@ -2,3 +2,6 @@ User-agent: *
 Disallow: /*?*q=
 Disallow: /privacy-policy/
 Disallow: /terms-of-service/
+Disallow: /categories/
+Disallow: /category/
+Disallow: /resume/

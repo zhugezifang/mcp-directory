@@ -85,7 +85,7 @@
           "title": "Resources",
           "children": [
             {
-              "title": "Model Context Protocol",
+              "title": "resource",
               "url": "",
               "target": "_blank"
             }
@@ -105,8 +105,8 @@
           "title": "Friends",
           "children": [
             {
-              "title": "ThinkAny",
-              "url": "https://thinkany.ai",
+              "title": "测试",
+              "url": "",
               "target": "_blank"
             }
           ]

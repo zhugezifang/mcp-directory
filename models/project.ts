@@ -86,7 +86,6 @@ export async function getProjectsCountByCategory(
     .from("projects")
     .select("count")
     .eq("category", category)
-    .range(0,10);
     //.eq("status", ProjectStatus.Created);
 
   if (error) return 0;

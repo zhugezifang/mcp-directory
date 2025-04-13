@@ -54,7 +54,7 @@ export default async function ({
     return <div>Category not found</div>;
   }
 
-  const projects = await getProjectsByCategory(cate, 1, 300);
+  const projects = await getProjectsByCategory(cate, 1, 30);
   category.projects_count = await getProjectsCountByCategory(cate);
 
   return <Category category={category} projects={projects} />;

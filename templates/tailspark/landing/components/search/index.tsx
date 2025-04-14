@@ -71,7 +71,7 @@ export default ({ query }: Props) => {
           <input
             type="text"
             className="text-sm md:text-md flex-1 px-4 py-3 border-2 border-primary bg-white rounded-lg disabled:border-gray-300 disabled:text-gray-300"
-            placeholder="keyword to search"
+            placeholder="输入简历关键词"
             ref={inputRef}
             value={content}
             disabled={inputDisabled}

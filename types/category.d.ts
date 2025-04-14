@@ -3,5 +3,6 @@ export interface Category {
   title: string;
   status: string;
   created_at: string;
+  description: string;
   projects_count?: number;
 }

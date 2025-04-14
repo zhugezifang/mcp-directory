@@ -25,7 +25,7 @@ export async function generateMetadata({
       pageJson?.metadata?.title
     }`;
     description = `${
-      category?.title || "-"
+      category?.description
     }`;
   }
 

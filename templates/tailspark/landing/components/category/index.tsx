@@ -18,10 +18,9 @@ export default function ({
         <h1 className="text-4xl text-primary font-bold mb-2">
         {category.projects_count || 0} + {category.title}
         </h1>
-        {/*<p className="text-lg text-gray-500 mt-4">
-          <span className="text-primary">{category.projects_count || 0}</span>{" "}
-          MCP Servers Found
-        </p>*/}
+        <p className="text-lg text-gray-500 mt-4">
+          {category.description}
+        </p>
       </div>
 
       <div className="w-full text-center">

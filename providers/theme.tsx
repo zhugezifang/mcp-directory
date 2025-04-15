@@ -20,10 +20,10 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
             `,
         }}
       ></script>
-
+      
       <script
         async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2123767634383915"
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4158779929727637"
         crossOrigin="anonymous"
       ></script>
     </>

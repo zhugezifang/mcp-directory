@@ -36,7 +36,7 @@ export default ({ query }: Props) => {
       const url = `?q=${encodeURIComponent(question)}`;
       console.log("query url", url);
       await router.push(url);
-      setInputDisabled(true); // Disable input after navigation
+      setInputDisabled(false); // Disable input after navigation
     } catch (e) {
       console.log("search failed: ", e);
       setInputDisabled(false);

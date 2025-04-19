@@ -8,12 +8,9 @@ import moment from "moment";
 export default ({ project }: { project: Project }) => {
   return (
     <Link
-      href={
-        project.target === "_blank"
-          ? project.url || ""
-          : `/resume/${project.uuid}`
+      href={`/resume/${project.uuid}`
       }
-      target={project.target || "_self"}
+      target="_blank"
     >
       <div className="mb-6 gap-6 overflow-hidden rounded-2xl border border-solid border-[#7e7e7e] bg-white p-8 text-center">
         <img               

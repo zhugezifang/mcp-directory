@@ -10,7 +10,7 @@ export default function DownLoad({ imageUrl,fileName }: { imageUrl: string,fileN
         setTextFlag(false);
         await sleep(5000);
         setTextFlag(true);
-        window.open(imageUrl, "_blank");
+        window.location.href = imageUrl;
     }
 
   return (

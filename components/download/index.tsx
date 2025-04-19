@@ -7,8 +7,9 @@ export default function DownLoad({ imageUrl,fileName }: { imageUrl: string,fileN
     const [textFlag, setTextFlag] = useState(true);
 
     async function downloadImage(imageUrl:string,fileName:string){
-        await sleep(5000);
         setTextFlag(false);
+        await sleep(5000);
+        setTextFlag(true);
         window.open(imageUrl, "_blank");
     }
 

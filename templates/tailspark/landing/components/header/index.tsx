@@ -30,7 +30,7 @@ export default ({ header }: { header: Header }) => {
           <ul className="md:flex float-right flex text-lg text-slate-700 mr-4 items-center">
             {header?.nav?.items?.map((item: Item, idx: number) => {
               return (
-                <li className="mx-4 hidden md:block" key={idx}>
+                <li className="mx-4 md:block" key={idx}>
                   <a
                     href={item.url}
                     target={item.target}

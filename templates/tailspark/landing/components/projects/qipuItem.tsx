@@ -12,11 +12,17 @@ export default ({ project }: { project: Project }) => {
       }
       target="_blank"
     >
-      <div className="mb-6 gap-6 overflow-hidden rounded-2xl border border-solid border-[#7e7e7e] bg-white p-8 text-center">
-        <img               
-        src={project.avatar_url}
-        alt={project.name} className="w-full h-auto max-h-[336px] object-contain rounded-lg"/>
-        <h2 className="text-xl font-semibold mt-4">{project.name}</h2>
+      <div className="bg-white rounded-lg border border-solid border-[#7e7e7e] p-2 shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1">
+                <div className="relative">
+                    <img src={project.avatar_url}
+                    alt={project.name} className="w-full object-cover"/> 
+                    <div className="absolute top-0 right-0 bg-primary text-white px-2 py-1 text-xs rounded-bl-lg before:content-['免费']">
+                      
+                    </div>
+                </div>
+                <div className="p-4">
+                    <div className="text-xl font-semibold mt-4">{project.name}</div> 
+                </div>
       </div>
     </Link>
   );

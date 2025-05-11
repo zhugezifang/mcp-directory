@@ -5,4 +5,5 @@ export interface Category {
   created_at: string;
   description: string;
   projects_count?: number;
+  sumamry: string;
 }

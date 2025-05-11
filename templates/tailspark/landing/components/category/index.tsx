@@ -3,6 +3,7 @@ import Crumb from "./crumb";
 import Link from "next/link";
 import { Project } from "@/types/project";
 import Projects from "../projects";
+import Markdown from "@/components/markdown";
 
 export default function ({
   category,
@@ -25,6 +26,9 @@ export default function ({
 
       <div className="w-full text-center">
         {projects && <Projects projects={projects} />}
+      </div>
+      <div className="mx-auto leading-loose pt-4 pb-8 px-8">
+        <Markdown content={category.sumamry} />
       </div>
     </div>
   );

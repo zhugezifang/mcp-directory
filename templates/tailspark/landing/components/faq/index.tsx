@@ -27,7 +27,7 @@ export default function ({ section }: { section: Section }) {
               className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50"
               onClick={() => toggleFAQ(index)}
             >
-              <span className="font-medium text-gray-900">{faq.title}</span>
+              <h3 className="font-medium text-gray-900">{faq.title}</h3>
               <svg
                 className={`w-5 h-5 transform transition-transform duration-200 ${
                   activeIndex === index ? "rotate-180" : ""

@@ -4,3 +4,4 @@ Disallow: /privacy-policy/
 Disallow: /terms-of-service/
 Disallow: /categories/
 Disallow: /resume/
+Disallow: /gpts/

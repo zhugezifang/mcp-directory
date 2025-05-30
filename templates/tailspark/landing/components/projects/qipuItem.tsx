@@ -21,7 +21,7 @@ export default ({ project }: { project: Project }) => {
                     </div>
                 </div>
                 <div className="p-4">
-                    <div className="text-xl font-semibold mt-4">{project.name}</div> 
+                    <h2 className="text-xl font-semibold mt-4">{project.name}</h2> 
                 </div>
       </div>
     </Link>

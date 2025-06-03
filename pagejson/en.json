@@ -15,11 +15,6 @@
     "nav": {
       "items": [
         {
-          "title": "在线制作简历",
-          "url": "https://cv.image-splitter.online/",
-          "target": "_blank"
-        },
-        {
           "title": "类别",
           "url": "/categories",
           "target": "_self"

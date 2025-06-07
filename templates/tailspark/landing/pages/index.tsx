@@ -22,15 +22,19 @@ export default function ({
     <div>
       {page.hero && <Hero hero={page.hero} count={projectsCount} />}
       <Search />
+
+
+
       <div className="container mx-auto px-4 pt-6 pb-2">
-        <nav className="flex justify-center space-x-6">
+        <nav className="flex flex-wrap justify-center gap-2 sm:gap-4 md:gap-6">
+
         {categories &&
           categories.map((category: Category) => {
             return (
               <Link
                 key={category.name}
                 href={`/category/${category.name}`}
-                className="px-4 py-2 bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer border border-gray-200"
+                className="px-3 py-2 text-sm sm:text-base sm:px-4 sm:py-2 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow cursor-pointer border border-gray-200 whitespace-nowrap"
               >
                 {category.title}
               </Link>

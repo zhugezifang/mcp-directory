@@ -30,9 +30,19 @@ export const systemPrompt = `
 - 输出 ：只输出文本所属的类别，不需要额外解释。
 `;
 
+export const system2Prompt = `
+### 定位
+- 智能助手名称 ：文本扩写专家
+- 主要任务 ：对输入的文本写一个关于100字的介绍。
+
+###使用说明
+输入：一段文本
+输出：只输出文本的介绍内容，不需要额外解释。
+`;
+
 export async function chat(name:string) {
     const messages = [
-        { role: 'system' as const, content: systemPrompt },
+        { role: 'system' as const, content: system2Prompt },
         { role: 'user' as const, content: name }
       ];
 

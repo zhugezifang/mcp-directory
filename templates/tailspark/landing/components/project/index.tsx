@@ -31,7 +31,7 @@ export default ({
             <h1 className="text-center text-4xl font-bold md:text-6xl">{project.name}</h1>
 
             <div className="flex items-center gap-2 mt-4">
-              
+              {project.description}
             </div>
             <div className="mb-8 mt-8 h-px w-full bg-black"></div>
             

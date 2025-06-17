@@ -194,6 +194,27 @@ export async function getRandomProjects(
   return data.sort(() => Math.random() - 0.5);
 }
 
+export async function getRandomProjectsIsNullWithDescription(
+  page: number,
+  limit: number
+): Promise<Project[]> {
+  const supabase = getSupabaseClient();
+  const { data, error } = await supabase
+    .from("projects")
+    .select("*")
+    .is("description", null)
+    //.eq("status", ProjectStatus.Created)
+    .order("id", { ascending: true })
+    //.order("created_at", { ascending: false })
+    .limit(10);
+    //.range((page - 1) * limit, page * limit - 1);
+
+  if (error) return [];
+
+  return data.sort(() => Math.random() - 0.5);
+}
+
+
 export async function getProjectsWithKeyword(
   keyword: string,
   page: number,
@@ -247,6 +268,19 @@ export async function updateProject(uuid: string, project: Partial<Project>) {
   const { data, error } = await supabase
     .from("projects")
     .update(project)
+    .eq("uuid", uuid);
+
+  if (error) throw error;
+
+  return data;
+}
+
+
+export async function updateProjectInfos(uuid: string, description: string) {
+  const supabase = getSupabaseClient();
+  const { data, error } = await supabase
+    .from("projects")
+    .update({ description: description })
     .eq("uuid", uuid);
 
   if (error) throw error;

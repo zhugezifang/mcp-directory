@@ -16,7 +16,7 @@ export async function generateMetadata({
 
   return {
     title: `${project?.name || "-"} | ${pagejson?.metadata?.title}`,
-    description: `${project?.name}`,
+    description: `${project?.description}`,
 
     /*description: `${project?.name || "-"}: ${
       project?.description || "-"

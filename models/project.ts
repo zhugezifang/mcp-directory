@@ -202,11 +202,11 @@ export async function getRandomProjectsIsNullWithDescription(
   const { data, error } = await supabase
     .from("projects")
     .select("*")
-    .is("description", null)
+    .is("description", null);
     //.eq("status", ProjectStatus.Created)
-    .order("id", { ascending: true })
+    //.order("id", { ascending: true })
     //.order("created_at", { ascending: false })
-    .limit(10);
+    //.limit(10);
     //.range((page - 1) * limit, page * limit - 1);
 
   if (error) return [];

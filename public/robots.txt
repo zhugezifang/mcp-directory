@@ -4,3 +4,4 @@ Disallow: /privacy-policy/
 Disallow: /terms-of-service/
 Disallow: /gpts/
 Disallow: /_next/
+Disallow: /contact/

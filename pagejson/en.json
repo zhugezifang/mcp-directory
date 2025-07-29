@@ -121,6 +121,11 @@
           "title": "Friends",
           "children": [
             {
+              "title": "星书签导航",
+              "url": "https://www.star8.cn/",
+              "target": "_blank"
+            },
+            {
               "title": "OpenI AI时代",
               "url": "https://openi.cn/",
               "target": "_blank"

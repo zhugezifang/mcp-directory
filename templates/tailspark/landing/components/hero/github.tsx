@@ -48,6 +48,7 @@ export default function ({
           <img
             src={StarIcon.src}
             alt="star"
+            loading="lazy"
             className="inline-block w-4 flex-none -mt-1"
           />
           {stars})

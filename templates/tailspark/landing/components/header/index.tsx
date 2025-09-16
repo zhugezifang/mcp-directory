@@ -30,6 +30,7 @@ export default ({ header }: { header: Header }) => {
             <img
               src={header?.brand?.avatar?.src}
               alt={header?.brand?.avatar?.title || header?.brand?.title}
+              loading="lazy"
               className="w-10 h-10 rounded-full border-2 border-slate-300 shadow-lg mr-2"
             />
             {header?.brand?.title}

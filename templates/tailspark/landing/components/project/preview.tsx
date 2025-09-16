@@ -11,6 +11,7 @@ export default function ({ project }: { project: Project }) {
         // Bug 修复：将 String 类型转换为 string 类型
         src={imgUrl}
         alt={project.name}
+        loading="lazy"
         className="object-cover"
       />
     ))}

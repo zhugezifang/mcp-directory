@@ -24,11 +24,13 @@ export default ({ hero, count }: { hero: Hero; count?: number }) => {
       <img
         src={BgStar.src}
         alt=""
+        loading="lazy"
         className="absolute bottom-[auto] left-[auto] right-0 top-24 -z-10 inline-block max-[767px]:hidden"
       />
       <img
         src={BgStar.src}
         alt="bgstar"
+        loading="lazy"
         className="absolute bottom-[auto] right-[auto] left-0 top-60 -z-10 inline-block max-[767px]:hidden"
       />
       {/*<Buttons />*/}

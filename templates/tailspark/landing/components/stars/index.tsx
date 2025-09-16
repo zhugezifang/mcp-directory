@@ -8,6 +8,7 @@ export default function () {
           key={idx}
           src={StarIcon.src}
           alt="star"
+          loading="lazy"
           className="mr-1.5 inline-block w-4 flex-none"
         />
       ))}

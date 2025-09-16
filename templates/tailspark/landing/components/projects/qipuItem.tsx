@@ -14,7 +14,7 @@ export default ({ project }: { project: Project }) => {
     >
       <div className="bg-white rounded-lg border border-solid border-[#7e7e7e] p-2 shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1">
                 <div className="relative">
-                    <img src={project.avatar_url}
+                    <img src={project.avatar_url} loading="lazy"
                     alt={project.name} className="w-full object-cover"/> 
                     <div className="absolute top-0 right-0 bg-primary text-white px-2 py-1 text-xs rounded-bl-lg before:content-['免费']">
                       

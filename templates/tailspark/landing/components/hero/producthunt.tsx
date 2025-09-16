@@ -10,6 +10,7 @@ export default function () {
         alt="GPTs&#0032;Works - GPTs&#0032;third&#0045;party&#0032;store&#0044;&#0032;website&#0044;&#0032;browser&#0032;extension | Product Hunt"
         width="250"
         height="54"
+        loading="lazy"
         className="mx-auto"
       />
     </a>

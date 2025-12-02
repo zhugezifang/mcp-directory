@@ -83,42 +83,33 @@
     "nav": {
       "items": [
         {
-          "title": "About",
+          "title": "关于",
           "children": [
             {
-              "title": "Privacy Policy",
+              "title": "隐私协议",
               "url": "/privacy-policy",
               "target": "_blank"
             },
             {
-              "title": "Terms of Service",
+              "title": "服务协议",
               "url": "/terms-of-service",
               "target": "_blank"
             }
           ]
         },
         {
-          "title": "Resources",
+          "title": "资源",
           "children": [
-            {
-              "title": "resource",
-              "url": "",
-              "target": "_blank"
-            }
           ]
         },
         {
-          "title": "Community",
+          "title": "社区",
           "children": [
-            {
-              "title": "Telegram",
-              "url": "https://t.me/+N0gv4O9SXio2YWU1",
-              "target": "_blank"
-            }
+            
           ]
         },
         {
-          "title": "Friends",
+          "title": "友链",
           "children": [
             {
               "title": "星书签导航",

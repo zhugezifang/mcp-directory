@@ -155,6 +155,11 @@
               "title": "How Attractive am I",
               "url": "https://howattractiveami.app/",
               "target": "_blank"
+            },
+            {
+              "title": "Share Text Online With Link",
+              "url": "https://share-text.org/",
+              "target": "_blank"
             }
           ]
         }

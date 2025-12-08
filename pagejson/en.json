@@ -145,6 +145,16 @@
               "title": "Online Notepad",
               "url": "https://onlinenotepad101.org/",
               "target": "_blank"
+            },
+            {
+              "title": "Eye Type Detector",
+              "url": "https://eyeshapedetector.app/",
+              "target": "_blank"
+            },
+            {
+              "title": "How Attractive am I",
+              "url": "https://howattractiveami.app/",
+              "target": "_blank"
             }
           ]
         }

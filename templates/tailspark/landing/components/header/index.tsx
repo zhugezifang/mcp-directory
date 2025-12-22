@@ -11,7 +11,8 @@ export default ({ header }: { header: Header }) => {
 
   return (
     <>
-    {/*<div className="bg-red-500 text-white text-center py-3 px-4 flex items-center justify-center relative">
+      
+    <div className="bg-red-500 text-white text-center py-3 px-4 flex items-center justify-center relative">
         <a href='/contact' target='_blank' className="text-sm">🔥 进求职交流群，获取最新简历模板和岗位内推</a>
         <button className="absolute right-4 text-white hover:text-blue-200">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -19,7 +20,7 @@ export default ({ header }: { header: Header }) => {
             </svg>
         </button>
     </div>
-    */}
+      
     <header className="mx-auto w-full max-w-7xl px-4 md:px-8 mt-4 md:mt-4">
       <div className="flex items-center">
         <p className="text-lg md:text-3xl font-medium ">

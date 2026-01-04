@@ -105,7 +105,11 @@
         {
           "title": "社区",
           "children": [
-            
+            {
+              "title": "免费在线PS",
+              "url": "https://onlineps101.org/zh/",
+              "target": "_blank"
+            }
           ]
         },
         {

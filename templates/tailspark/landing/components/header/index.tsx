@@ -34,7 +34,7 @@ export default ({ header }: { header: Header }) => {
               loading="lazy"
               className="w-10 h-10 rounded-full border-2 border-slate-300 shadow-lg mr-2"
             />
-            {header?.brand?.title}
+            cv-template.online
           </a>
         </p>
 
